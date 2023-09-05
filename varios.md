@@ -1,0 +1,1 @@
+Instalar nodemon con npm i -g nodemon

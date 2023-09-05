@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const funcion = async () => {
+        try {
+          const resp = await fetch("http://localhost:3400/api/lista");
+          const data = await resp.json();
+          console.log("data es", data);
+        } catch (error) {
+          console.log("error ", error);
+        }
+      };
+    //   funcion()
+    const guardar = async () => {
+        try {
+          const resp = await fetch("http://localhost:3400/api/guardar", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              nombre: "nombre1",
+            
+            }),
+          });
+          const data = await resp.json();
+          console.log("data es", data);
+        } catch (error) {
+          console.log("error ", error);
+        }
+    }
+    guardar()
+    </script>
+  </body>
+</html>
