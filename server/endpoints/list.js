@@ -1,12 +1,12 @@
-const { funcionMysql } = require("../utils/mysql");
+const { functionMysql } = require("../utils/mysql");
 
-exports.lista = async (req, res) => {
-  console.log("hola");
+exports.list = async (req, res) => {
+  
   try {
-    const conn = await funcionMysql();
-    const query = `SELECT * FROM productos`;
+    const conn = await functionMysql();
+    const query = `SELECT * FROM products`;
     conn.query(query, function (error, results, fields) {
-      if (error) throw error;
+      if (error) return res.status(304).json({message:'error'})
       res.status(200).json({
         message: "ok",
         data: results,

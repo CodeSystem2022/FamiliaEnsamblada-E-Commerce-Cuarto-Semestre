@@ -9,24 +9,27 @@
     <script>
       const funcion = async () => {
         try {
-          const resp = await fetch("http://localhost:3400/api/lista");
+          const resp = await fetch("http://localhost:3400/api/list");
           const data = await resp.json();
           console.log("data es", data);
         } catch (error) {
           console.log("error ", error);
         }
       };
-    //   funcion()
+    // funcion()
+
     const guardar = async () => {
         try {
-          const resp = await fetch("http://localhost:3400/api/guardar", {
+          const resp = await fetch("http://localhost:3400/api/admin/save", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              nombre: "nombre1",
-            
+              brand: "marca12",
+              model: "modelo1",
+              quantity: 10,
+              accesories: "3 joystick, 2 juegos"
             }),
           });
           const data = await resp.json();
@@ -35,7 +38,49 @@
           console.log("error ", error);
         }
     }
-    guardar()
+    // guardar()
+
+    const actualizar = async () => {
+        try {
+          const resp = await fetch("http://localhost:3400/api/admin/update", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              brand: "sony",
+              model: "playstation", 
+              id_product: "13",
+              quantity: 100,
+              accesories: "4 joysticks, 5 juegos" 
+            }),
+          });
+          const data = await resp.json();
+          console.log("data es", data);
+        } catch (error) {
+          console.log("error ", error);
+        }
+    }
+    // actualizar()
+
+    const borrar = async () => {
+        try {
+          const resp = await fetch("http://localhost:3400/api/admin/delete", {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ 
+              id_product: "13", 
+            }),
+          });
+          const data = await resp.json();
+          console.log("data es", data);
+        } catch (error) {
+          console.log("error ", error);
+        }
+    }
+    borrar()
     </script>
   </body>
 </html>
