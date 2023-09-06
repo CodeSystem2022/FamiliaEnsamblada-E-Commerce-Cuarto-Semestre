@@ -4,9 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mt-4 mx-auto d-block">
+          <!-- Input Brand -->
+          <div class="mb-3">
+            <label class="form-label">Brand</label>
+            <input
+              type="text"
+              class="form-control"
+              id="brand"
+              placeholder="Type the brand"
+            />
+          </div>
+          <!-- Cierre Brand -->
+          <!-- Input Model -->
+          <div class="mb-3">
+            <label class="form-label">Model</label>
+            <input
+              type="text"
+              class="form-control"
+              id="model"
+              placeholder="Type the model"
+            />
+          </div>
+          <!-- Cierre Model -->
+          <!-- Input Quantity -->
+          <div class="mb-3">
+            <label class="form-label">Quantity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="quantity"
+              placeholder="Type the quantity"
+            />
+          </div>
+          <!-- Cierre Quantity -->
+          <!-- Input Model -->
+          <div class="mb-3">
+            <label  class="form-label">Accesories</label>
+            <textarea class="form-control" id="accesories" rows="3" placeholder="Type the accesories"></textarea>
+          </div>
+          <!-- Imagen -->
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Image of product</label>
+            <input class="form-control" type="file" id="formFile">
+          </div>
+          <!-- Cierre Imagen -->
+          <!-- Cierre Model -->
+          <button type="button" class="btn btn-primary" id="save">Save</button>
+        </div>
+      </div>
+    </div>
     <script>
+      const save = document.getElementById("save");
+      save.addEventListener("click", () => {
+        const brand = document.getElementById("brand").value;
+        const model = document.getElementById("model").value;
+        const quantity = document.getElementById("quantity").value;
+        const accesories = document.getElementById("accesories").value;
+        const formData = new FormData();
+        formData.append("brand", brand);
+        formData.append("model", model);
+        formData.append("quantity", quantity);
+        formData.append("accesories", accesories);
+        formData.append("image", document.getElementById("formFile").files[0]);
+        console.log("brand es", brand);
+        fetch("http://localhost:3400/api/admin/save", {
+          method: "POST",
+          body: formData,
+          // headers: {
+          //   "Content-Type": "multipart/form-data",
+          // },
+        })
+          .then((res) => res.json())
+          .then((data) => console.log("data es", data))
+          .catch((err) => console.log(err));
+
+
+      });
+
+
       const funcion = async () => {
         try {
           const resp = await fetch("http://localhost:3400/api/list");
@@ -16,9 +107,9 @@
           console.log("error ", error);
         }
       };
-    // funcion()
+      // funcion()
 
-    const guardar = async () => {
+      const guardar = async () => {
         try {
           const resp = await fetch("http://localhost:3400/api/admin/save", {
             method: "POST",
@@ -29,7 +120,7 @@
               brand: "marca12",
               model: "modelo1",
               quantity: 10,
-              accesories: "3 joystick, 2 juegos"
+              accesories: "3 joystick, 2 juegos",
             }),
           });
           const data = await resp.json();
@@ -37,10 +128,10 @@
         } catch (error) {
           console.log("error ", error);
         }
-    }
-    // guardar()
+      };
+      // guardar()
 
-    const actualizar = async () => {
+      const actualizar = async () => {
         try {
           const resp = await fetch("http://localhost:3400/api/admin/update", {
             method: "PUT",
@@ -49,10 +140,10 @@
             },
             body: JSON.stringify({
               brand: "sony",
-              model: "playstation", 
+              model: "playstation",
               id_product: "13",
               quantity: 100,
-              accesories: "4 joysticks, 5 juegos" 
+              accesories: "4 joysticks, 5 juegos",
             }),
           });
           const data = await resp.json();
@@ -60,18 +151,18 @@
         } catch (error) {
           console.log("error ", error);
         }
-    }
-    // actualizar()
+      };
+      // actualizar()
 
-    const borrar = async () => {
+      const borrar = async () => {
         try {
           const resp = await fetch("http://localhost:3400/api/admin/delete", {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ 
-              id_product: "13", 
+            body: JSON.stringify({
+              id_product: "13",
             }),
           });
           const data = await resp.json();
@@ -79,8 +170,8 @@
         } catch (error) {
           console.log("error ", error);
         }
-    }
-    borrar()
+      };
+      // borrar()
     </script>
   </body>
 </html>
