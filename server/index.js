@@ -24,8 +24,8 @@ app.use(
 const upload = multer({ dest: "images/" });
 app.use(cors());
 app.get("/api/list", list);
-app.post("/api/admin/save", isAuthenticated, upload.single("image"), save);
-app.put("/api/admin/update", isAuthenticated, update);
+app.post("/api/admin/save", upload.single("image"), isAuthenticated, save);
+app.put("/api/admin/update", upload.single("image"), isAuthenticated, update);
 app.delete("/api/admin/delete", isAuthenticated, erase);
 app.use("/images", express.static(path.join(__dirname, "images"))); // serve the images/ directory as a static directory
 app.post("/api/login", login);

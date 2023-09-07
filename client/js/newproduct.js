@@ -2,7 +2,6 @@ const save = document.getElementById("save");
 save.addEventListener("click", (e) => {
   e.preventDefault();
   try {
-    console.log("click");
     const brand = document.getElementById("brand").value;
     const model = document.getElementById("model").value;
     const quantity = document.getElementById("quantity").value;
@@ -13,7 +12,6 @@ save.addEventListener("click", (e) => {
     formData.append("quantity", quantity);
     formData.append("accesories", accesories);
     formData.append("image", document.getElementById("formFile").files[0]);
-    console.log("brand es", brand);
     fetch("http://localhost:3400/api/admin/save", {
       method: "POST",
       body: formData,

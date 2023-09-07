@@ -91,7 +91,15 @@ function modal(id_product) {
                       value=
                       >${product.accesories}</textarea>
                     </div>
-                 
+                    <!-- Imagen -->
+                    <img src="http://localhost:3400/images/${product.image}" alt="..." class="img-thumbnail" style='width:60px'>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label"
+                        >Image of product</label
+                      >
+                      <input class="form-control" type="file" id="formFile2" />
+                    </div>
+                    <!-- Cierre Imagen -->
                     <!-- Cierre Model -->
                     </div>
                     `;
@@ -104,18 +112,17 @@ async function saveEdit() {
     const model = document.getElementById("model2").value;
     const quantity = document.getElementById("quantity2").value;
     const accesories = document.getElementById("accesories2").value;
+    const formData = new FormData();
+    formData.append("brand", brand);
+    formData.append("model", model);
+    formData.append("quantity", quantity);
+    formData.append("accesories", accesories);
+    formData.append("id_product", currentProduct.id_product);
+    formData.append("image", document.getElementById("formFile2").files[0]);
     const resp = await fetch("http://localhost:3400/api/admin/update", {
       method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        brand: brand,
-        model: model,
-        id_product: currentProduct.id_product,
-        quantity: quantity,
-        accesories: accesories,
-      }),
+
+      body: formData,
     });
     const data = await resp.json();
     console.log("data es", data);

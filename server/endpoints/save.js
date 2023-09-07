@@ -2,8 +2,8 @@ const { functionMysql } = require("../utils/mysql");
 const fs = require("fs");
 exports.save = async (req, res) => {
   try {
-    console.log("req file is, ", req.file);
-    console.log("req body is, ", req.body);
+    // console.log("req file is, ", req.file);
+    // console.log("req body is, ", req.body);
 
     const { brand, model, quantity, accesories } = req.body;
 
