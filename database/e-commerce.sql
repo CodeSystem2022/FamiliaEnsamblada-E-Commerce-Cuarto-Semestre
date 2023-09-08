@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-09-2023 a las 07:44:05
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.2
+-- Tiempo de generación: 09-09-2023 a las 01:09:40
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,18 +29,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `products` (
   `id_product` bigint(254) NOT NULL,
-  `brand` varchar(100) COLLATE utf8_spanish_ci NOT NULL DEFAULT '',
-  `model` varchar(100) COLLATE utf8_spanish_ci NOT NULL DEFAULT '',
-  `quantity` int(100) NOT NULL DEFAULT '1',
-  `accesories` text COLLATE utf8_spanish_ci NOT NULL
+  `brand` varchar(100) NOT NULL DEFAULT '',
+  `model` varchar(100) NOT NULL DEFAULT '',
+  `quantity` int(100) NOT NULL DEFAULT 1,
+  `accesories` text NOT NULL,
+  `image` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id_product`, `brand`, `model`, `quantity`, `accesories`) VALUES
-(14, 'marca12', 'modelo1', 10, '3 joystick, 2 juegos');
+INSERT INTO `products` (`id_product`, `brand`, `model`, `quantity`, `accesories`, `image`) VALUES
+(29, 'Sony', 'Playstation', 10, '2 Joystick + 3 juegos', '29.webp'),
+(30, 'Sony', 'Playstation 3', 6, '3 Joysticks + 4 juegos', '30.webp'),
+(31, 'Sony', 'Playstation 4', 15, '2 Joystick + 5 Juegos', '31.webp'),
+(32, 'Sony', 'Playstation 5', 20, '4 Joystick + 6 juegos', '32.webp'),
+(33, 'Microsoft', 'Xbox 360', 10, '2 Joystick + 3 juegos', '33.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -61,7 +65,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` bigint(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_product` bigint(254) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
