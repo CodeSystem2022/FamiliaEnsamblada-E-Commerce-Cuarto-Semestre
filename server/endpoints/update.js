@@ -5,13 +5,13 @@ exports.update = async (req, res) => {
   try {
     console.log("se ejecuta");
     console.log("req body is, ", req.body);
-    const { brand, model, quantity, accesories, id_product } = req.body;
+    const { brand, model, quantity, accesories, price, id_product } = req.body;
     const conn = await functionMysql();
     const query =
-      "UPDATE products SET brand = ?, model = ?, quantity = ?, accesories = ? WHERE id_product = ? LIMIT 1";
+      "UPDATE products SET brand = ?, model = ?, quantity = ?, accesories = ?, price = ? WHERE id_product = ? LIMIT 1";
     conn.query(
       query,
-      [brand, model, quantity, accesories, id_product],
+      [brand, model, quantity, accesories, price, id_product],
       async function (error, results, fields) {
         if (error) return res.status(304).json({ message: "error" });
         const productId = id_product;

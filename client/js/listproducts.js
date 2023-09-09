@@ -21,6 +21,7 @@ async function getProducts() {
             <h5 class="mb-1">${product.brand} ${product.model}</h5>
             <p class="mb-1">Accesorios: ${product.accesories}</p>
             <p class="mb-1">Cantidad: ${product.quantity}</p>
+            <p class="mb-1">Precio: $${product.price}</p>
           </div>
           <div class="col-4">
           <div class="d-flex justify-content-between align-items-center">
@@ -84,6 +85,18 @@ function modal(id_product) {
                       />
                     </div>
                     <!-- Cierre Quantity -->
+                    <!-- Input Price -->
+                    <div class="mb-3">
+                      <label class="form-label">Price</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="price2"
+                        placeholder="Type the price"
+                        value=${product.price}
+                      />
+                    </div>
+                    <!-- Cierre Price -->
                     <!-- Input Model -->
                     <div class="mb-3">
                       <label  class="form-label">Accesories</label>
@@ -112,12 +125,14 @@ async function saveEdit() {
     const model = document.getElementById("model2").value;
     const quantity = document.getElementById("quantity2").value;
     const accesories = document.getElementById("accesories2").value;
+    const price = document.getElementById("price2").value;
     const formData = new FormData();
     formData.append("brand", brand);
     formData.append("model", model);
     formData.append("quantity", quantity);
     formData.append("accesories", accesories);
     formData.append("id_product", currentProduct.id_product);
+    formData.append("price", price);
     formData.append("image", document.getElementById("formFile2").files[0]);
     const resp = await fetch("http://localhost:3400/api/admin/update", {
       method: "PUT",

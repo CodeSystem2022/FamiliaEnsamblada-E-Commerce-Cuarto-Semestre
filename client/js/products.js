@@ -15,6 +15,7 @@ window.onload = async function () {
         <div class="card-body">
         <h5 class="card-title">${element.brand} ${element.model}</h5>
         <p class="card-text">${element.accesories}</p>
+        <p class="card-text">$${element.price}</p>
         <button type="button" class="btn btn-primary" onclick='addToCart(${element.id_product})'>Agregar</button>
         </div>
         </div>`;

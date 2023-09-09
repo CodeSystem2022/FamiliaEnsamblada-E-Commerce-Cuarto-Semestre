@@ -6,11 +6,14 @@ save.addEventListener("click", (e) => {
     const model = document.getElementById("model").value;
     const quantity = document.getElementById("quantity").value;
     const accesories = document.getElementById("accesories").value;
+    const price = document.getElementById("price").value;
+
     const formData = new FormData();
     formData.append("brand", brand);
     formData.append("model", model);
     formData.append("quantity", quantity);
     formData.append("accesories", accesories);
+    formData.append("price", price);
     formData.append("image", document.getElementById("formFile").files[0]);
     fetch("http://localhost:3400/api/admin/save", {
       method: "POST",
