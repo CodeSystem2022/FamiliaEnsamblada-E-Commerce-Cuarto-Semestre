@@ -1,11 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Front End Familia Ensamblada</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style-form.css"/>
+    <!-- Fabicon -->
+    <link rel="icon" href="/FamiliaEnsamblada-E-Commerce-Cuarto-Semestre/server/images/logo.png">
+
+    <!-- Íconos -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-    
+
+    <!-- Header -->
+    <header class="container-fluid pb-1">
+
+        <!-- Sección Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                    <div class="row-md-4">
+                        <a class="navbar-brand" href="#">
+                            <img class="logo" src="/FamiliaEnsamblada-E-Commerce-Cuarto-Semestre/server/images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="row-md-4">
+                        <h5 class="col-auto p-5 text-center">Venta de consolas de videojuegos</h5>    
+                    </div>
+                    <div class="row-md-4">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                   </div>
+                   <div class="row-md-4">
+                         <a class="nav-link" href="productos.html">Productos</a>
+                   </div>
+                   <div class="row-md-4">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                    </div>
+                    <div class="row-md-4">
+                        <a href="carrito.html" class="btn btn-secondary shadow-none">Ir al carrito</a>
+                    </div>                  
+                </div>
+                </div>
+                  <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class='bx bx-menu'></i>
+                </button>
+                
+                
+              
+            </div>
+        </nav>
+        <!-- Fin Sección Navbar -->
+
+        <!-- Sección Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="img-fluid" width=100% src="/FamiliaEnsamblada-E-Commerce-Cuarto-Semestre/server/images/banner.png" alt="hamburguesa">
+                    </div>
+                </div>
+        </section>
+        <!-- Fin Sección Hero -->
+
+    </header>
+    <!-- Fin Header -->
+
+
+
+
+    <!-- Fin Sección Productos -->
+
+    <!-- Sección Nosotros -->
+    <section class="nosotros" id="nosotros">
+        <div class="container text-center">
+            <div class="col">
+                <div class="row">
+                    <img class="img-fluid" src="/FamiliaEnsamblada-E-Commerce-Cuarto-Semestre/server/images/marcas.webp" alt="hamburguesa">
+                </div>
+                <div class="row">
+                    <br>
+                </div>
+                <div class="row">
+                    <div class="cta">
+                        <a href="productos.html" class="btn btn-primary shadow-none">Ver productos</a>
+                    </div>
+
+                    <div class="copy">
+                        <div class="text-label">
+                            Comunicate con nosotros al 0800 222 1111
+                        </div>
+
+                        <div class="text-hero-bold">
+                           Envios gratis a toda la Argentina
+                        </div>
+                    </div>       
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Fin Sección Servicios -->
+
+    <!-- Sección Formulario de Contacto -->
+    <div class="div-contenedor " id="contacto">
+
+    <section class="container container-contact mx-auto d-block">
+  
+        <div class="row my-5">
+          <div class="col-sm-12 col-md-12 col-lg-12 mx-auto d-block">
+            <form action="#"  id="informacion" class="formu">
+              <h1 class="texto-iluminado">Contacto: </h1>  
+              <div class="form-group">
+                <label>Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre aquí" minlength="3" maxlength="15" class="form-control" pattern="[A-Za-z]+" required>
+              </div>
+              <div class="form-group">
+                <label>Apellido:</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido Aquí" minlength="3" maxlength="20" class="form-control" pattern="[A-Za-z]+" required>
+              </div>
+              <div class="form-group">
+                <label>Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="@" maxlength="20" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label>Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Deje su Mensaje" class="form-control" minlength="5" maxlength="300" required></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" id="enviar" class="btn btn-success btn-block mt-2 mb-2">Enviar</button>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="reset" class="btn btn-secondary col-5">Limpiar</button>
+                <a href="formulario.php" class="btn btn-danger col-5">Cancelar</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div></div>
+    </section>
+</div>
+    <!-- Fin Sección Formulario de Contacto -->
+
+    <!-- Sección Footer -->
+    <footer>
+        <div class="container- text-center">
+
+            <div class="row p-5 text-white bg-dark">
+
+                <span>
+                    Assembled Family - Todos los derechos reservados
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- Fin Sección Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+        </script>
+
+        <script>
+            const formulario = document.getElementById('informacion');
+            formulario.addEventListener("submit", (e) => {
+                e.preventDefault();
+               const nombre = document.getElementById('nombre').value;
+                const apellido = document.getElementById('apellido').value;
+                const email = document.getElementById('email').value;
+                const mensaje = document.getElementById('mensaje').value;
+                console.log(nombre, apellido, email, mensaje);
+
+                //Generate fetch async to localhost:3120/contacto
+                fetch('https://www.familia-ensamblada.gerardo-duckwitz.com/contacto2', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nombre: nombre,
+                        apellido: apellido,
+                        email: email,
+                        mensaje: mensaje
+                    })
+                }).then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+                formulario.reset();
+            })
+        </script>
 </body>
-</html>
