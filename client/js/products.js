@@ -1,8 +1,10 @@
 let arrayProducts = [];
 window.onload = async function () {
   try {
+    console.log("hola")
     const resp = await fetch("http://localhost:3400/api/list");
     const json = await resp.json();
+    console.log("json es: ",json)
     if (!json.data) return;
     arrayProducts = json.data;
     const divContainer = document.getElementById("colCard");
