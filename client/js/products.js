@@ -8,15 +8,15 @@ window.onload = async function () {
     const divContainer = document.getElementById("colCard");
     json.data.forEach((element) => {
       const div = document.createElement("div");
-      div.className = "col-md-4";
+      div.className = "col-md-4 mt-3 mb-3";
       div.innerHTML = `
-        <div class="card" >
-        <img src="http://localhost:3400/images/${element.image}" class="img-fluid card-img-top" style='width:60px'>
-        <div class="card-body">
+        <div class="card h-100">
+        <img src="http://localhost:3400/images/${element.image}" class="img-fluid card-img-top me-3 ms-3 mt-3 mb-3" style='width:60px'>
+        <div class="card-body position-relative" style="padding-bottom:50px">
         <h5 class="card-title">${element.brand} ${element.model}</h5>
         <p class="card-text">${element.accesories}</p>
         <p class="card-text">$${element.price}</p>
-        <button type="button" class="btn btn-primary" onclick='addToCart(${element.id_product})'>Agregar</button>
+        <button type="button" class="btn btn-primary mx-auto d-block  mb-2"  onclick='addToCart(${element.id_product})' style="bottom:10px; left:0px">Agregar</button>
         </div>
         </div>`;
       //
