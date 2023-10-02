@@ -1,5 +1,4 @@
 exports.isAuthenticated = (req, res, next) => {
-  console.log("req session es", req.session);
   if (req.session && req.session.cookie) {
     return next();
   } else {

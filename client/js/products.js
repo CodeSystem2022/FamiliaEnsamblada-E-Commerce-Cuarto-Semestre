@@ -16,7 +16,7 @@ window.onload = async function () {
         <h5 class="card-title">${element.brand} ${element.model}</h5>
         <p class="card-text">${element.accesories}</p>
         <p class="card-text">$${element.price}</p>
-        <button type="button" class="btn btn-primary mx-auto d-block  mb-2"  onclick='addToCart(${element.id_product})' style="bottom:10px; left:0px">Agregar</button>
+        <button type="button" class="btn btn-primary  position-absolute mb-2 boton1"  onclick='addToCart(${element.id_product})' style="bottom:1px; left:10px;">Agregar</button>
         </div>
         </div>`;
       //
@@ -28,11 +28,38 @@ window.onload = async function () {
 };
 
 function addToCart(product) {
+  let state = false;
   const productFound = arrayProducts.find(
     (element) => parseInt(element.id_product) === parseInt(product)
   );
   if (!productFound) return;
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const productFoundInCart = cart.find(
+    (element) => parseInt(element.id_product) === parseInt(product)
+  );
+  if (productFoundInCart) {
+    // productFoundInCart.quantity += 1;
+    cart.forEach((element) => {
+      if (element.id_product === productFoundInCart.id_product) {
+        if (parseInt(element.quantity) === parseInt(element.quantitySelected)) {
+          alert("No hay mas stock");
+          state = true;
+          return;
+        }
+        if (element.quantitySelected) {
+          element.quantitySelected = parseInt(element.quantitySelected) + 1;
+        } else {
+          element.quantitySelected = 1;
+        }
+      }
+    });
+    if (state) return;
+    // console.log("cart", cart);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Se sumo 1 en cantidad al producto");
+    return;
+  }
+  productFound.quantitySelected = 1;
   cart.push(productFound);
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Producto agregado al carrito");

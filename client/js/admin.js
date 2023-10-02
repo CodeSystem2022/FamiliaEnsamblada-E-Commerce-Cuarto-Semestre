@@ -17,7 +17,7 @@ document.querySelector("#btnLogin").addEventListener("click", () => {
           "loggedIn=true; expires=Thu, 18 Dec 2030 12:00:00 UTC";
         window.location.href = "panel.html";
       } else {
-        alert("Invalid Credentials");
+        alert("Credenciales incorrectas");
       }
     })
     .catch((error) => {
