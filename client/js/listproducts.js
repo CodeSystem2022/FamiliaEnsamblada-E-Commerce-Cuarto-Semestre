@@ -4,7 +4,6 @@ async function getProducts() {
   try {
     const resp = await fetch("http://localhost:3400/api/list");
     const data = await resp.json();
-    console.log("data es", data);
     const listGroup = document.getElementById("list-group");
     listGroup.innerHTML = "";
     if (!data.data) return;
@@ -39,7 +38,6 @@ async function getProducts() {
 }
 
 function modal(id_product) {
-  console.log("arrayProducts es", arrayProducts);
   const product = arrayProducts.find(
     (product) => parseInt(product.id_product) === parseInt(id_product)
   );
@@ -51,56 +49,56 @@ function modal(id_product) {
     <div class="col-md-12 mt-4 mx-auto d-block">
                     <!-- Input Brand -->
                     <div class="mb-3">
-                      <label class="form-label">Brand</label>
+                      <label class="form-label">Marca</label>
                       <input
                         type="text"
                         class="form-control"
                         id="brand2"
-                        placeholder="Type the brand"
+                        
                         value=${product.brand}
                       />
                     </div>
                     <!-- Cierre Brand -->
                     <!-- Input Model -->
                     <div class="mb-3">
-                      <label class="form-label">Model</label>
+                      <label class="form-label">Modelo</label>
                       <input
                         type="text"
                         class="form-control"
                         id="model2"
-                        placeholder="Type the model"
+                        
                         value=${product.model}
                       />
                     </div>
                     <!-- Cierre Model -->
                     <!-- Input Quantity -->
                     <div class="mb-3">
-                      <label class="form-label">Quantity</label>
+                      <label class="form-label">Cantidad</label>
                       <input
                         type="number"
                         class="form-control"
                         id="quantity2"
-                        placeholder="Type the quantity"
+                        
                         value=${product.quantity}
                       />
                     </div>
                     <!-- Cierre Quantity -->
                     <!-- Input Price -->
                     <div class="mb-3">
-                      <label class="form-label">Price</label>
+                      <label class="form-label">Precio</label>
                       <input
                         type="number"
                         class="form-control"
                         id="price2"
-                        placeholder="Type the price"
+                        
                         value=${product.price}
                       />
                     </div>
                     <!-- Cierre Price -->
                     <!-- Input Model -->
                     <div class="mb-3">
-                      <label  class="form-label">Accesories</label>
-                      <textarea class="form-control" id="accesories2" rows="3" placeholder="Type the accesories"
+                      <label  class="form-label">Accesorios</label>
+                      <textarea class="form-control" id="accesories2" rows="3" 
                       value=
                       >${product.accesories}</textarea>
                     </div>
@@ -108,7 +106,7 @@ function modal(id_product) {
                     <img src="http://localhost:3400/images/${product.image}" alt="..." class="img-thumbnail" style='width:60px'>
                     <div class="mb-3">
                       <label for="formFile" class="form-label"
-                        >Image of product</label
+                        >Imagen del producto</label
                       >
                       <input class="form-control" type="file" id="formFile2" />
                     </div>
@@ -140,7 +138,6 @@ async function saveEdit() {
       body: formData,
     });
     const data = await resp.json();
-    console.log("data es", data);
     document.getElementById("btn-close-modal").click();
     getProducts();
   } catch (error) {
@@ -149,7 +146,7 @@ async function saveEdit() {
 }
 
 function setDelete(id_product) {
-  console.log("111");
+  // console.log("111");
   const deleteProduct = document.getElementById("deleteProduct");
   const product = arrayProducts.find(
     (product) => parseInt(product.id_product) === parseInt(id_product)
@@ -175,7 +172,7 @@ async function deleteProduct() {
       }),
     });
     const data = await resp.json();
-    console.log("data es", data);
+    // console.log("data es", data);
     document.getElementById("btn-close-modal2").click();
     getProducts();
   } catch (error) {

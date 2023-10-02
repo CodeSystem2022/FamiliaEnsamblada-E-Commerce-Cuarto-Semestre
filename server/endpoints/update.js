@@ -3,8 +3,6 @@ const fs = require("fs");
 
 exports.update = async (req, res) => {
   try {
-    console.log("se ejecuta");
-    console.log("req body is, ", req.body);
     const { brand, model, quantity, accesories, price, id_product } = req.body;
     const conn = await functionMysql();
     const query =

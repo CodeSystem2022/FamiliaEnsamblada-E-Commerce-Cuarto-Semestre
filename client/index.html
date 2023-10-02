@@ -6,8 +6,9 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" type="text/css" href="./style-form.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> 
+ 
     <!-- Fabicon -->
     <link rel="icon" href="/FamiliaEnsamblada-E-Commerce-Cuarto-Semestre/server/images/logo.png">
 
@@ -18,26 +19,28 @@
 
 <body>
   <!-- Empieza navbar -->
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="./images/logo1.png" style="width:150px" class="img-fluid"/></a>
+      <a class="navbar-brand" href="index.html"><img src="./images/logo1.png" style="width:150px" class="img-fluid"/></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center" >
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="#">Inicio</a>
+            <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-
-            <a class="nav-link" href="#Prod">Productos</a>
-
+            <a class="nav-link" href="index.html#Prod">Productos</a>
           </li>
-         
           <li class="nav-item">
             <a class="nav-link" href="carrito.html">Carrito</a>
           </li>
+         
+         
+        </ul>
+       
       </div>
     </div>
   </nav>
@@ -48,21 +51,20 @@
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
 
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 2"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./images/marcas.webp" class="d-block w-100" style="height: 500px" alt="...">
+        <!-- <div class="carousel-item active">
+          <img src="./images/marcas2.png"  class="d-block w-100"  alt="...">
 
           <div class="carousel-caption d-none d-md-block">
             <h5>Marcas</h5>
             <p>Nintendo - Sony - Microsoft</p>
           </div>
-        </div>
+        </div> -->
       
-        <div class="carousel-item">
+        <div class="carousel-item  active">
       
- <img src="./images/playstations.jpg" class="d-block w-100" style="height: 500px" alt="...">
+ <img src="./images/playstations.jpg" class="d-block w-100"  alt="...">
 
           <div class="carousel-caption d-none d-md-block">
             <h5>Playstation</h5>
@@ -72,7 +74,7 @@
 
     
     <div class="carousel-item">
-      <img src="./images/img111.jpg" class="d-block w-100" style="height: 500px" alt="...">
+      <img src="./images/img111.jpg" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
           <h5>Consolas</h5>
           <p>Elegí la tuya</p>
@@ -100,22 +102,16 @@
 
 
  <!-- Productos-->
- <article id="Prod">
-  <script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-  crossorigin="anonymous"
-></script>
+ 
 </head>
 <body>
 </div>
-  <div class="container-fluid mt-4">
+  <div class="container-fluid mt-4"  id="Prod">
       <div class="row"  id="colCard">
               
       </div>
   </div>
   <script src="./js/products.js"></script>
- </article>
 
  <footer class="bg-dark text-white" style="margin-top: 10px">
   <div class="container py-4">
@@ -132,7 +128,7 @@
           </div>
           <div class="col-md-4" style="padding-left: 20%">
               <h4>Redes Sociales:</h4>
-              <ul class="list-unstyled">
+              <ul class="list-unstyled ">
                   <li><a href="https://es-es.facebook.com/"><i class="fab fa-facebook"></i> Facebook</a></li>
                   <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i> Twitter</a></li>
                   <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a></li>

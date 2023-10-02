@@ -1,0 +1,31 @@
+.boton1 {
+    background: #5407e3 !important;
+    color: #ffffff;
+    border: 0px !important;
+  }
+  
+  .boton1:active {
+    background: #5407e3 !important;
+    color: #ffffff;
+    border: 0px !important;
+    box-shadow: none !important;
+  }
+  .boton1:active:focus {
+    background: #5407e3 !important;
+    color: #ffffff;
+    border: 0px !important;
+    box-shadow: none !important;
+  }
+  .boton1:hover {
+    background: #5407e3 !important;
+    color: #ffffff;
+    border: 0px !important;
+    box-shadow: none !important;
+  }
+  
+  .boton1::after {
+    background: #5407e3 !important;
+    color: #ffffff;
+    border: 0px !important;
+    box-shadow: none !important;
+  }
