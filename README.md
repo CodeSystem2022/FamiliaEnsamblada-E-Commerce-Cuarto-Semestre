@@ -10,11 +10,11 @@ https://familia-ensamblada.vercel.app/
 
 
 Integrantes:
-●Alesci, Anabel Gisella   | Guaymallen, Mendoza.
-●Duckwitz, Gerardo Federico  | General Fernandez Oro, Rio Negro.
-●Mercado, Jesus    | Villa de Soto, Córdoba.
-●López, Yesica Beatriz   | Lanús, Buenos Aires.
-●Remaggi,  Jose Luis   | Guaymallen, Mendoza.
- ●Villa, Matias  | Córdoba, Córdoba.
-●Zaccaro, Mercedes Victoria   | Villa Santa Cruz del Lago, Punilla,
-Córdoba.
+<p>Alesci, Anabel Gisella   | Guaymallen, Mendoza.</p>
+<p>Duckwitz, Gerardo Federico  | General Fernandez Oro, Rio Negro.</p>
+<p>Mercado, Jesus    | Villa de Soto, Córdoba.</p>
+<p>López, Yesica Beatriz   | Lanús, Buenos Aires.</p>
+<p>Remaggi,  Jose Luis   | Guaymallen, Mendoza.</p>
+ <p>Villa, Matias  | Córdoba, Córdoba.</p>
+<p>Zaccaro, Mercedes Victoria   | Villa Santa Cruz del Lago, Punilla,
+Córdoba.</p>
