@@ -1,4 +1,4 @@
-# FamiliaEnsamblada-E-comerce-Cuarto-Semestre
+# FamiliaEnsamblada-E-commerce-Cuarto-Semestre
 
 
 <h3>Todos los integrantes del grupo participamos en el proyecto</h3>
